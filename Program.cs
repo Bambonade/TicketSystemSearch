@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using NLog.Web;
+using System.Linq;
 
 namespace TicketSystemSearch
 {
@@ -92,7 +93,20 @@ namespace TicketSystemSearch
                     }
                 } 
                 if(choice == 3){
+                    Console.WriteLine("1) Search by status");
+                    Console.WriteLine("2) Search by priority");
+                    Console.WriteLine("3) Search by submitter");
+                    Console.WriteLine("Enter anything else to exit");
+                    string choice = Console.ReadLine();
+                    if(choice == "1"){
 
+                    }
+                    else if(choice == "2"){
+
+                    }
+                    else if(choice =="3"){
+                        
+                    }
                 }
             } while (choice == "1" || choice == "2" || choice == "3");
 
