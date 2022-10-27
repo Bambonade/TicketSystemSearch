@@ -106,12 +106,78 @@ namespace TicketSystemSearch
                         int statusNumTask = ticketFile.Tasks.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase)).Count();
                         int statusTotal = statusNumBug + statusNumEnhancements + statusNumTask;
                         Console.WriteLine($"There are {statusTotal} tickets that have a status of {statusSearch}");
+                        var statusSearchBug = ticketFile.Bugs.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Bug Tickets ({statusNumBug})");
+                        foreach(Bug bug in statusSearchBug)
+                        {
+                            Console.WriteLine(bug.Entry());
+                        }
+                        var statusSearchEnhancements = ticketFile.Enhancements.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Enhancement Tickets ({statusNumEnhancements})");
+                        foreach(Enhancement enhancement in statusSearchEnhancements)
+                        {
+                            Console.WriteLine(enhancement.Entry());
+                        }
+                        var statusSearchTask = ticketFile.Tasks.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Task Tickets ({statusNumTask})");
+                        foreach(Task task in statusSearchTask)
+                        {
+                            Console.WriteLine(task.Entry());
+                        }
                     }
                     else if(searchChoice == "2"){
-
+                        Console.WriteLine("Enter ticket priority");
+                        string prioritySearch = Console.ReadLine();
+                        int priorityNumBug = ticketFile.Bugs.Where(b => b.priority.Contains(prioritySearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int priorityNumEnhancements = ticketFile.Enhancements.Where(b => b.priority.Contains(prioritySearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int priorityNumTask = ticketFile.Tasks.Where(b => b.priority.Contains(prioritySearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int priorityTotal = priorityNumBug + priorityNumEnhancements + priorityNumTask;
+                        Console.WriteLine($"There are {priorityTotal} tickets that have a priority of {prioritySearch}");
+                        var prioritySearchBug = ticketFile.Bugs.Where(b => b.priority.Contains(prioritySearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Bug Tickets ({priorityNumBug})");
+                        foreach(Bug bug in prioritySearchBug)
+                        {
+                            Console.WriteLine(bug.Entry());
+                        }
+                        var prioritySearchEnhancements = ticketFile.Enhancements.Where(b => b.priority.Contains(prioritySearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Enhancement Tickets ({priorityNumEnhancements})");
+                        foreach(Enhancement enhancement in prioritySearchEnhancements)
+                        {
+                            Console.WriteLine(enhancement.Entry());
+                        }
+                        var prioritySearchTask = ticketFile.Tasks.Where(b => b.priority.Contains(prioritySearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Task Tickets ({priorityNumTask})");
+                        foreach(Task task in prioritySearchTask)
+                        {
+                            Console.WriteLine(task.Entry());
+                        }
                     }
                     else if(searchChoice =="3"){
-
+                        Console.WriteLine("Enter ticket submitter");
+                        string submitterSearch = Console.ReadLine();
+                        int submitterNumBug = ticketFile.Bugs.Where(b => b.submitter.Contains(submitterSearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int submitterNumEnhancements = ticketFile.Enhancements.Where(b => b.submitter.Contains(submitterSearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int submitterNumTask = ticketFile.Tasks.Where(b => b.submitter.Contains(submitterSearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int submitterTotal = submitterNumBug + submitterNumEnhancements + submitterNumTask;
+                        Console.WriteLine($"There are {submitterTotal} tickets that have a submitter with the name of {submitterSearch}");
+                        var submitterSearchBug = ticketFile.Bugs.Where(b => b.submitter.Contains(submitterSearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Bug Tickets ({submitterNumBug})");
+                        foreach(Bug bug in submitterSearchBug)
+                        {
+                            Console.WriteLine(bug.Entry());
+                        }
+                        var submitterSearchEnhancements = ticketFile.Enhancements.Where(b => b.submitter.Contains(submitterSearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Enhancement Tickets ({submitterNumEnhancements})");
+                        foreach(Enhancement enhancement in submitterSearchEnhancements)
+                        {
+                            Console.WriteLine(enhancement.Entry());
+                        }
+                        var submitterSearchTask = ticketFile.Tasks.Where(b => b.submitter.Contains(submitterSearch, StringComparison.OrdinalIgnoreCase));
+                        Console.WriteLine($"Task Tickets ({submitterNumTask})");
+                        foreach(Task task in submitterSearchTask)
+                        {
+                            Console.WriteLine(task.Entry());
+                        }
                     }
                 }
             } while (choice == "1" || choice == "2" || choice == "3");
