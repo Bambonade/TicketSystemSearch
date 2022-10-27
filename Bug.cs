@@ -1,4 +1,4 @@
-namespace MidtermProject{
+namespace TicketSystemSearch{
     public class Bug : Ticket {
         public string severity{ get; set; }
 

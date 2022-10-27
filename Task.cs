@@ -1,6 +1,6 @@
 using System;
 
-namespace MidtermProject {
+namespace TicketSystemSearch {
     public class Task : Ticket {
         public string projectName { get; set; }
         public DateTime dueDate { get; set; }

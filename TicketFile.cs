@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using NLog.Web;
 
-namespace MidtermProject {
+namespace TicketSystemSearch {
     public class TicketFile {
         public string filePath1 {get; set;}
         public string filePath2 {get; set;}
