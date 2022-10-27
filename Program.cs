@@ -92,20 +92,26 @@ namespace TicketSystemSearch
                         ticketFile.AddTaskTicket(task);
                     }
                 } 
-                if(choice == 3){
+                if(choice == "3"){
                     Console.WriteLine("1) Search by status");
                     Console.WriteLine("2) Search by priority");
                     Console.WriteLine("3) Search by submitter");
                     Console.WriteLine("Enter anything else to exit");
-                    string choice = Console.ReadLine();
-                    if(choice == "1"){
+                    string searchChoice = Console.ReadLine();
+                    if(searchChoice == "1"){
+                        Console.WriteLine("Enter ticket status");
+                        string statusSearch = Console.ReadLine();
+                        int statusNumBug = ticketFile.Bugs.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int statusNumEnhancements = ticketFile.Enhancements.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int statusNumTask = ticketFile.Tasks.Where(b => b.status.Contains(statusSearch, StringComparison.OrdinalIgnoreCase)).Count();
+                        int statusTotal = statusNumBug + statusNumEnhancements + statusNumTask;
+                        Console.WriteLine($"There are {statusTotal} tickets that have a status of {statusSearch}");
+                    }
+                    else if(searchChoice == "2"){
 
                     }
-                    else if(choice == "2"){
+                    else if(searchChoice =="3"){
 
-                    }
-                    else if(choice =="3"){
-                        
                     }
                 }
             } while (choice == "1" || choice == "2" || choice == "3");
