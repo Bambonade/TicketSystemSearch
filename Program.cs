@@ -18,6 +18,7 @@ namespace TicketSystemSearch
             do {
                 Console.WriteLine("1) Read ticket information");
                 Console.WriteLine("2) Add ticket infomation");
+                Console.WriteLine("3) Search for ticket");
                 Console.WriteLine("Enter any other key to exit");
                 choice = Console.ReadLine();
 
@@ -89,8 +90,11 @@ namespace TicketSystemSearch
                         } while(dateCheck == false);
                         ticketFile.AddTaskTicket(task);
                     }
+                } 
+                if(choice == 3){
+
                 }
-            } while (choice == "1" || choice == "2");
+            } while (choice == "1" || choice == "2" || choice == "3");
 
             logger.Info("Program Ended");
         }
